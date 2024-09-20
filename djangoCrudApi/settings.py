@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os #Esta importacion crea la carpeta para importar los archivos estaticos de nuestro pryecto
+import dj_database_url #Esta importacion ayuda a sacar todos los datos de la base de datos automaticamente
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,10 +85,7 @@ WSGI_APPLICATION = 'djangoCrudApi.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default='sqlite://db.sqlite3'); #En produccion se utilizara postgresql y en desarrollo sqlite, osea se utilizaran las dos bases de datos dependiendo del contexto
 }
 
 
