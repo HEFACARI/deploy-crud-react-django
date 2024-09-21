@@ -86,9 +86,7 @@ WSGI_APPLICATION = 'djangoCrudApi.wsgi.application'
 
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL", "sqlite:///db.sqlite3")
-    ) #En produccion se utilizara postgresql y en desarrollo sqlite, osea se utilizaran las dos bases de datos dependiendo del contexto
+    "default": dj_database_url.config(default="sqlite://db.sqlite3") #En produccion se utilizara postgresql y en desarrollo sqlite, osea se utilizaran las dos bases de datos dependiendo del contexto
 }
 
 
