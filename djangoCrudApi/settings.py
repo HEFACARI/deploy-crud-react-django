@@ -86,7 +86,18 @@ WSGI_APPLICATION = 'djangoCrudApi.wsgi.application'
 
 
 DATABASES = {
-    "default": dj_database_url.config(default="sqlite://db.sqlite3") #En produccion se utilizara postgresql y en desarrollo sqlite, osea se utilizaran las dos bases de datos dependiendo del contexto
+    "default": dj_database_url.config(default="sqlite://db.sqlite3"), #En produccion se utilizara postgresql y en desarrollo sqlite, osea se utilizaran las dos bases de datos dependiendo del contexto
+    "DATABASE_PUBLIC_URL": "postgresql://postgres:zjGEaUhKWdEdbLPhocBfLVHyqtyObzDS@junction.proxy.rlwy.net:18620/railway",
+    "DATABASE_URL": "postgresql://postgres:zjGEaUhKWdEdbLPhocBfLVHyqtyObzDS@postgres.railway.internal:5432/railway",
+    "PGDATA": "/var/lib/postgresql/data/pgdata",
+    "PGDATABASE": "railway",
+    "PGHOST": "postgres.railway.internal",
+    "PGPASSWORD": "zjGEaUhKWdEdbLPhocBfLVHyqtyObzDS",
+    "PGUSER": "postgres",
+    "POSTGRES_DB": "railway",
+    "POSTGRES_PASSWORD": "zjGEaUhKWdEdbLPhocBfLVHyqtyObzDS",
+    "POSTGRES_USER": "postgres",
+    "SSL_CERT_DAYS": "820"
 }
 
 
